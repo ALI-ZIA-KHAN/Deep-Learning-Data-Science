@@ -1,0 +1,48 @@
+stack mn peeche lgauya matrix ko yani dimension brha,depth add hogai
+
+in horizontal stack no of col increasees
+vertical stack ulta
+
+concatenate with axis 1 is same as horizontal stack while 0 for vstack
+
+
+axis 0 for rows 1 for col
+
+depth stack is kind of similar to simple stack it takes 2  2d matrix for example of  3 *3 now when we depth stack it it takes both of them flat them and then change axis, best exapmle is in video on 35:00 th
+
+
+split yani div
+isme bhi hsplit se column (mtlb ulat than usual)
+and vsplit se row
+(div krte hue anne ki direction zehen mn rkho then u wl get it)
+
+
+m.argmin-> index of min value
+0 axis mn hr row k min
+
+
+cumsum cumproduct -> 1 pichla add or multiply krte jana
+
+
+
+fancy indexing
+selecting multiple rows for example that r not contiguos
+
+
+np,maximum(x,y)-> compares and selects max one at each index of matrix
+
+
+
+for matrix multiplication
+Col of A== Row of B
+np.dot(x,y)
+
+Accessinf elements in a 3d matrix d3[2,1,5]
+
+
+Library 
+
+PILLOW
+matplotlib->
+
+iamread converts img into numpy array (to confirmed about numpy)
