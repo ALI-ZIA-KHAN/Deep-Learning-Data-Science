@@ -1,0 +1,64 @@
+
+1d array =[1,2,3]>>> vector dimension>>1 
+2d array = [[1,2,3],[2,3,4]]>>matrix/tensor >>2
+
+# evenly spaced #'s between two intervals
+np.linspace(0, 10, 20)
+
+
+
+
+# arr1d = arr2d.reshape(20)  # in this way we need to know how many elements are there in original array
+# print(arr1d)                      # we are open to reshape to any dimension either 1d or other
+
+print("======================================================")
+# reshaping a 2darray to 3darray
+arr2d = np.arange(64).reshape(8,8)
+
+print(arr2d)
+
+print("============================")
+arr3d = arr2d.reshape(2,4,8)  #(depth, rows,columns)
+arr3d
+
+
+
+
+array range lkr use array bnane k lye use hoti
+arange directly rray bnakr deta hai
+
+
+arange se for ininstance 20 elements ki array bnai
+ab reshape(x,y) mn x y aese dne hain jnk product 20 k brabar ho exact
+
+
+np.size(arr,0) size of row
+
+arr.reshape(2,4,8) ->4*8 ki 2 matrices, 3 dim hai depth rows col
+z x y, agr 4d 5d...ki bnani to axis bhi brhenge 
+
+ravel only makes 1 d arr
+
+reshape n ravel both changes original array with copy as well(pass by ref)
+
+
+flatten lkn original ko nhi bdlta
+
+resize chnges original one w/o copy danger
+
+
+indexing particular element ya grp of elements(eg like a row ) ko access krne k lye
+[row,col] ya [r][c] (ek hi) iknk intersection wala element mlta
+[x] gives the 1d array if x is row from 2d matrix
+"dsn't represent the dim of,from which it is derived"
+
+
+
+slicing se range uthaskte
+"derived one represents the dim"
+[0:2,1:2]
+
+but slicing k lye 4ron parameter wala format lazmi
+like [x:y][a:b](format ye ho bshq valuses sb na ho)
+
+[3:,2:]->empty se usk aage jtni bhi wo sb
