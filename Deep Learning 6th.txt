@@ -1,0 +1,68 @@
+Merging 
+
+.merge(df,df2)
+
+suppose pehle df mn sbse pehle value 
+b :2 phir chothi 
+b :3
+
+ab ise meerge krna hai dusre df se jsme b ki 2 jga pr 6 8  value hai
+
+merge will work like that k
+sbse pehle df mn b tha use dusre k 6 8  ksath combine krk 2 rows hongi
+phir pehle k hi dusre b ne dusre df k dono b se mlkr do rows
+to 4 combinations bngai
+
+isitrah ab pehle table mn next value uthaega aur possible combinations
+
+lkn msla ye k pehle mn ek value hai uske comparision mn dusre mn koi value na mile to wo drop hojati hai merged mn
+
+
+hmne specified na kia ho to overlapping columns k respect se join krta
+
+wrna dia jskta hai
+pd.merge(df1,df2,on='key')
+
+
+agr same column ho hi na to
+pd.merge(df3,df4,left_on='',right_on='',how="outer")->left from 1st df n right from 2nd df join is outerjoin
+
+outer->union n inner ->intersection
+isme jo values hain ek mn bhi wo include dusre mn match nhi to uski jga Nan
+
+left right join mn left aur right k values ko preference milegi respectively if opposite mn izafi ho values aur join wale table mn nhi to wo shamil nhi
+agr join wale mn hai aur opposite mn nhi to join wale apna krega dusre mn NaN likhdega
+
+
+bydflt->there is inner join
+
+
+
+now if there is totally different data n u have to merge it
+then u can siple merge it with index
+pd.merge(left1,right1,left_index=True,right_index=True)
+
+
+
+ab hmne labelled index die unpe join krane k ye we used
+left2.join(right2,how="inner")
+result=left2.join([right2,another],how="inner")->here we joining three tables n since its inner so only common among three will be there
+
+
+
+df1.combine_first(df2)-> will combine like if there is Nan in one's value n secod df has value there, that value be share in combined instead of nan
+
+
+
+import sqlite3
+query='CREATE TABLE test (id INTEGER,userName VARCHAR(30))'
+con=sqlite3.connect('adatbasename.sqliite')
+con.execute(query)
+con.commit()
+data=[(1,''),(2,'')]
+stmnt='INSER INTO test VALUES(?,?)'
+con.executemany(stmt,data)
+con.commit()
+cursor=con.execute('select * from test')
+rows=cursor.fetchall()
+
