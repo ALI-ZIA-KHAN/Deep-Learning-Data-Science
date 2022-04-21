@@ -1,0 +1,61 @@
+Correlation
+relationship between two variables
+
+Cov and cor has own functions
+
+
+pd.read_csv("")/read_table("",sep=",",index_col="")
+
+can be two col index as well
+pd.read_csv("",skiprows=[])
+
+numpy form of loading data:
+
+np.loadtxt(filename,delimiter=",",skiprows=1)
+np.genfromtxt()
+
+
+Inspecting Data
+
+df.sample(3)-> random 3 rows
+df.info() -> tells about type and no of non null values for each column
+df.describe()-> basic stats
+df.corr()
+df.max()
+
+
+
+Saving n Serializing Data
+df.to_csv("save.csv",)
+df.to_pickle("")->but can't see w/o reading ass it is encoded
+df.to_hdf()
+df.to_feather()
+
+
+
+dATA   lOADING,fORMAT:
+
+json:
+we took an object whose key value is always string obv(dtype->str)
+
+then 
+result=json.loads(obj)
+type(result)->will be dict not string
+
+now this dict can be converted to json
+asjson=json.dump(result) whose dtype will be string
+
+
+
+pd.read_excel(xlsx,'Sheets1')
+
+
+Interacting with Web APIs
+
+
+import requests
+url="https..."
+resp=requests.get(url)-> if resp->response 200 it means recvd
+data=resp.json()
+data[0] pr pehli dicionary isitrah 1 pr dusri....
+issues=pd.DataFrame(data,columns=['','','',''])
