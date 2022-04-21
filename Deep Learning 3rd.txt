@@ -1,0 +1,119 @@
+Pandas
+
+1-> Series
+
+1D, indexed by dflt by integers
+we can explicilty index it,like a b c is called labelled indexing
+
+but in latter case still int index(position based) remains there
+
+
+length of index must be same if yu want to give same index too other series
+.count()->return counts but not null values
+.value_counts()->each value count
+
+.head()->start ki .tail()-> last ki
+
+
+position based index starts from 0(zero based posit lookup)
+
+
+if the values n index given as label are also integers
+then s3[2] will go for labeled based lookup
+
+
+s2.loc[2]->use for position based lookup
+s2.iloc[2]->use for forcefully looking by position based look up (iloc=int based loc)
+
+
+s5[[0,2]] do items mange 0 nhi tha label to isk brabr mn NaN dia baqi k samne value(could be depreciated)
+
+
+ALIGNMENT
+(pehle index ko uthaya search kia mil nhi bhi to wahin rkha order mn chlta gya)
+
+add in series is diff than niumpyy array
+
+s5+s6
+it will add corresponding to matched index
+
+
+
+JO label nhi honge match to add to us label k value NaN dega as:
+number +nan=nan
+nan+number=nan
+
+
+ab do series mn 2 2 same label 
+to wo 4 dega result mn after add
+pehla wala do se add then dusra walabhi 2ono se add
+
+
+s3.mean() -> pandas nAn value hai to use exclude krk nikalega mean
+in order to include, s.mean(skipna=false)
+
+s=np.arange(0,10)
+s>5
+to series ajaegi boolean values ki
+
+s[s>5}
+
+ab sari true values
+
+s[(s>5) & (s<8)] pandas ka and aesa
+
+.all(),.any() search fot trues
+
+(s<5).sum()
+jtne value true hain unka count
+
+
+Reindexing-> changing index
+
+
+same index wali series ko concat kia(either you give it or default) to index will be repeated like 0 1 2 0 1 2
+jbk keys rpeated nhi honi chahye to
+reindex it
+
+combined.index=np.arange(0,len(combined)) but isse original mn change
+
+safe option is reindex methodd->original doesn't change
+
+Now if we have series index a b c d
+we have done like
+s2.reindex([a c g])
+
+to d drop hoga aur g kage Nan
+
+
+
+suppose ading to series of index like first haiving 1 2 3 int n other same 1 2 3 but string , the result will be six index with NaN values
+
+so we can do s2.index.values.astype(int)
+
+
+
+Nan ki jga value dalni ho to
+s2.reindex([a,f],fill_value=0)  ab f mn nhi thi value isme to 0 dlwadia instead of nan
+
+
+
+fill can be:
+ffill--forward fill like 0 8 10 pr red gree yelllow hai aur series 15 ki hai
+to 12 nan values ffill hogi , 0 pr red aya phir sb pr red dalte gae until we get another filled value at 8 phir 9 tk green aur 14 tk yellow
+
+hn agr 0 pr nhi 2 se value di hai red jese to until 1 nan ffill
+
+backwardfill bfill oppposite to ffill
+
+then nearest fill
+
+yani 0 aur 8 k drmyan no ka difference dekha ga jo 0 se qreeb uspr red aur jo 8 k unko green tie wale no pr bfill dia
+
+
+pd.isnull(obj4) will give T n F same for notnull
+
+to name the series n index:
+obj4.name='population'
+obj4.index.name='state'
+
