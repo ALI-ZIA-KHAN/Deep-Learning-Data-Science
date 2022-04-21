@@ -1,0 +1,63 @@
+Dataframe
+created by 2d array,series,dictionary with series
+
+by default col row indexes is 0 1 2....
+
+
+with dictionaries:
+pd.DataFrame({boys:s1,girls:s2)}
+
+boys n girls will be col name
+
+df4=pd.DataFrame(np.array([[].[]]),index=['',''],columns=['',''])
+
+pd.DataFrame(frame,columns=['','','']) -> doesn't chnge original if extra then Nan values are shown
+
+frame.year se sare values se leskte
+agr column ka nam istrah hai jese year-1 to it will be accessed like frame['year-1'] now u wl get the values
+
+frame2['eastern']=np.NaN->to add col in a frame with all NaN values
+
+del frame2['']-> to delete a column
+
+
+suppose we want to add score of each subject of a student in frame 
+now wewill add a total column while adding row from column of first subj till last
+data['total']=data['subj1']+data['subj2']+data['subj3']
+data['percent']=data['TOtal']/400*100
+
+
+
+
+If the nested dict is passed to the DataFrame, pandas will interpret the outer dict keys as the columns and the inner keys as the row indices
+
+
+df3.index.name = 'year'
+df3.columns.name = 'state'
+
+se naam col aur rows ka
+
+
+
+index ki apni type object hai Index class ki,aur index ki value change nhi hoti
+labels=pd.Index([',','])
+col bhi same INDEX CLASS K OBJECT
+
+
+AB reindex k lye dono hi same hain object,but by dflt reindex  row ki krta
+frame2.reinex(columns=['','',''])
+
+
+DROPPING:(doesn't change original unlike Del)
+.drop([])-> by  dflt axis 0 of rows
+.drop([],axis=1)
+
+
+
+pd.date_range()->date's function
+
+
+agr actual data mn hi koi value NaN hogi koi to fill ki koi type Nan ki original vale ko nhi choregi
+
+to Confirm(row se value fetch via indexing krskte pr slicing nhi krskte  w/o loc n iloc)
+
